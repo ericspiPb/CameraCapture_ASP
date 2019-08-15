@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div id="root">
+        <div class="controller">
+            <button id="open_camera" onclick="openCamera()">Open Camera</button>
+            <button id="capture" onclick="takeSnapshot()" disabled>Capture</button>
+            <button id="close_camera" onclick="closeCamera()">Close Camera</button>
+            <button id="clear_image" onclick="clearImages()">Clear Saved Images</button>
+            <button id="save_image" onclick="saveImages()">Save Images</button>
+            <button id="load_image" onclick="loadImages()">Load Images</button>
+            <button id="upload_image" onclick="uploadImages()">Upload Images</button>
+            <button id="clear_days_ago_image" onclick="clearDaysAgoImages(7)">Clear 7 days ago images</button>
+        </div>
+        <div class="error"></div>
+        <div class="success"></div>
+        <video id="preview" autoplay></video>
+
+        @Scripts.Render("~/Scripts/camera")
+    </div>
+</body>
+</html>
